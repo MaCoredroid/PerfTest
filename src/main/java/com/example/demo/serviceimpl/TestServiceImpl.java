@@ -14,7 +14,7 @@ import java.util.concurrent.atomic.LongAdder;
 public class TestServiceImpl implements TestService {
     @Override
     public ResponseEntity<?> RunCPUTest() throws InterruptedException {
-        int numThreads = 16;
+        int numThreads = 64;
 
 
 
@@ -34,7 +34,7 @@ public class TestServiceImpl implements TestService {
             t.start();
         }
         double count=0;
-        for (int i = 0; i < 15; i++)
+        for (int i = 0; i < 30; i++)
         {
             counter.reset();
             try
@@ -52,7 +52,7 @@ public class TestServiceImpl implements TestService {
                     (double)(counter.longValue()) / numThreads
             );
         }
-        count=count/15;
+        count=count/30;
         for (int i = 0; i < runningCalcs.size(); i++)
         {
             runningCalcs.get(i).stop();
