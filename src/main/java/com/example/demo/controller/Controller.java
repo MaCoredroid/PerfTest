@@ -22,10 +22,22 @@ public class Controller {
 
 
   @RequestMapping(value = "/cpu", method = {RequestMethod.OPTIONS, RequestMethod.GET}, produces = "application/json")
-  public ResponseEntity<?> test() throws InterruptedException {
+  public ResponseEntity<?> testCPU() throws InterruptedException {
     TestService testService=applicationContext.getBean(TestService.class);
     return testService.RunCPUTest();
   }
 
+  @RequestMapping(value = "/cpuSingle", method = {RequestMethod.OPTIONS, RequestMethod.GET}, produces = "application/json")
+  public ResponseEntity<?> testCPUSingle() throws InterruptedException {
+    TestService testService=applicationContext.getBean(TestService.class);
+    return testService.RunCPUSingleTest();
+  }
+
+  @RequestMapping(value = "/cpuLong", method = {RequestMethod.OPTIONS, RequestMethod.GET}, produces = "application/json")
+  public ResponseEntity<?> testCPULong() throws InterruptedException {
+    TestService testService=applicationContext.getBean(TestService.class);
+    return testService.RunCPULongTest();
+
+  }
 
 }
