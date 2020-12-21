@@ -112,10 +112,14 @@ public class TestServiceImpl implements TestService {
 
     @Override
     public ResponseEntity<?> RunCPUSingleTest() throws InterruptedException {
-        Random rng=new Random();
-        double r = rng.nextFloat();
-        double v = Math.sin(Math.cos(Math.sin(Math.cos(r))));
-        return new ResponseEntity<>(String.valueOf(v), HttpStatus.OK);
+        double ans=0.00;
+        for(int i=0;i<100;i++) {
+            Random rng = new Random();
+            double r = rng.nextFloat();
+            double v = Math.sin(Math.cos(Math.sin(Math.cos(r))));
+            ans+=v;
+        }
+        return new ResponseEntity<>(String.valueOf(ans), HttpStatus.OK);
     }
 
     public static class CalculationThread implements Runnable
