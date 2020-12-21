@@ -113,7 +113,7 @@ public class TestServiceImpl implements TestService {
     @Override
     public ResponseEntity<?> RunCPUSingleTest() throws InterruptedException {
         double ans=0.00;
-        for(int i=0;i<3000;i++) {
+        for(int i=0;i<30000;i++) {
             Random rng = new Random();
             double r = rng.nextFloat();
             double v = Math.sin(Math.cos(Math.sin(Math.cos(r))));
