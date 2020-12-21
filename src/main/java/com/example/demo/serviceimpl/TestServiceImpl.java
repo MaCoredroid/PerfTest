@@ -132,7 +132,7 @@ public class TestServiceImpl implements TestService {
             t.start();
         }
         double count=0;
-        for (int i = 0; i < 30; i++)
+        for (int i = 0; i < 5; i++)
         {
             counter.reset();
             try
@@ -150,7 +150,7 @@ public class TestServiceImpl implements TestService {
                     (double)(counter.longValue()) / numThreads
             );
         }
-        count=count/30;
+        count=count/5;
         for (int i = 0; i < runningCalcs.size(); i++)
         {
             runningCalcs.get(i).stop();
