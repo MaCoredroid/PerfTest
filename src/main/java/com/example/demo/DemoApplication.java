@@ -14,12 +14,12 @@ import java.time.Duration;
 
 @SpringBootApplication
 public class DemoApplication {
-	@Value("${Pod_Name}")
-	private String PodName;
-	@Bean
-	MeterRegistryCustomizer<MeterRegistry> metricsCommonTags() {
-		return registry -> registry.config().commonTags("Pod", PodName);
-	}
+//	@Value("${Pod_Name}")
+//	private String PodName;
+//	@Bean
+//	MeterRegistryCustomizer<MeterRegistry> metricsCommonTags() {
+//		return registry -> registry.config().commonTags("Pod", PodName);
+//	}
 //	@Bean
 //	LoggingMeterRegistry loggingMeterRegistry() {
 //
